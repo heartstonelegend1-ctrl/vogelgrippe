@@ -4,156 +4,232 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vogelgrippe — Die Krankheit des Jahres</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; }
-  .hero { text-align: center; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid #eee; }
-  .badge { display: inline-block; background: #FAEEDA; color: #633806; font-size: 11px; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.06em; }
-  .hero h1 { font-size: 52px; font-weight: 600; line-height: 1.05; margin-bottom: 0.5rem; }
-  .hero .sub { font-size: 20px; color: #555; margin-bottom: 1.5rem; }
-  .hero .tagline { font-size: 13px; color: #999; }
-  .bird { font-size: 80px; margin-bottom: 1rem; }
-  .highlight { color: #BA7517; }
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 1.5rem 2rem; border-bottom: 1px solid #eee; }
-  .stat { background: #f7f7f5; border-radius: 10px; padding: 1.25rem; text-align: center; }
-  .stat .num { font-size: 30px; font-weight: 600; color: #1a1a1a; }
-  .stat .label { font-size: 12px; color: #888; margin-top: 3px; }
-  .section { padding: 2.5rem 2rem; border-bottom: 1px solid #eee; }
-  .section .eyebrow { font-size: 11px; letter-spacing: 0.08em; color: #aaa; margin-bottom: 0.5rem; text-transform: uppercase; }
-  .section h2 { font-size: 26px; font-weight: 600; margin-bottom: 0.6rem; }
-  .section p { font-size: 15px; color: #555; line-height: 1.7; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 1.5rem 2rem 2rem; border-bottom: 1px solid #eee; }
-  .card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 1.25rem; }
-  .card-icon { font-size: 28px; margin-bottom: 0.6rem; }
-  .card h4 { font-size: 14px; font-weight: 600; margin-bottom: 0.3rem; }
-  .card p { font-size: 13px; color: #666; line-height: 1.55; }
-  .faq-section { padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid #eee; }
-  .faq-section h2 { font-size: 26px; font-weight: 600; margin-bottom: 1.25rem; }
-  .acc-item { border: 1px solid #ebebeb; border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
-  .acc-head { padding: 1rem 1.25rem; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff; user-select: none; }
-  .acc-head:hover { background: #fafafa; }
-  .acc-body { padding: 0 1.25rem 1rem; font-size: 13px; color: #555; line-height: 1.65; display: none; }
-  .acc-body.open { display: block; }
-  .chevron { font-size: 18px; transition: transform 0.2s; color: #aaa; }
-  .chevron.open { transform: rotate(180deg); }
-  .cta { text-align: center; padding: 3rem 2rem; border-bottom: 1px solid #eee; }
-  .cta h2 { font-size: 30px; font-weight: 600; margin-bottom: 0.5rem; }
-  .cta p { font-size: 15px; color: #666; margin-bottom: 1.75rem; }
-  .btn { display: inline-block; background: #1a1a1a; color: #fff; border: none; border-radius: 10px; padding: 14px 32px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; }
-  .btn:hover { background: #333; }
-  .disclaimer { padding: 1.5rem 2rem; background: #f7f7f5; }
-  .disclaimer p { font-size: 11px; color: #aaa; line-height: 1.6; }
-  @media (max-width: 480px) {
-    .hero h1 { font-size: 36px; }
-    .stat-row { grid-template-columns: 1fr; }
-    .cards { grid-template-columns: 1fr 1fr; }
-  }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#1a0a00;color:#fff;font-family:'Oswald',sans-serif;}
+.hero{padding:2.5rem 1.5rem 2rem;text-align:center;border-bottom:4px solid #f5c842;}
+.hero-badge{display:inline-block;background:#e8003a;color:#fff;font-family:'Bangers',cursive;font-size:14px;letter-spacing:2px;padding:5px 18px;border-radius:2px;margin-bottom:1rem;}
+.chick{font-size:80px;line-height:1;margin-bottom:0.5rem;}
+.hero h1{font-family:'Bangers',cursive;font-size:72px;color:#f5c842;letter-spacing:5px;line-height:1;text-shadow:5px 5px 0 #b30029;margin-bottom:0.5rem;}
+.hero .sub{font-size:17px;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.75rem;}
+.hero .sub span{color:#f5c842;}
+.pill{display:inline-block;background:#f5c842;color:#1a0a00;font-size:12px;font-weight:700;padding:4px 14px;border-radius:2px;letter-spacing:1px;}
+.sec{border-bottom:3px solid #2e1800;padding:2rem 1.5rem;max-width:800px;margin:0 auto;}
+.sec:nth-child(even){background:#200c00;}
+.sec:nth-child(odd){background:#1a0a00;}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:1rem;}
+.sec-num{font-family:'Bangers',cursive;font-size:56px;color:#e8003a;line-height:1;min-width:56px;}
+.sec-icon{font-size:44px;line-height:1;}
+.sec-title{font-family:'Bangers',cursive;font-size:30px;color:#f5c842;letter-spacing:2px;line-height:1.1;}
+.sec-title small{display:block;font-family:'Oswald',sans-serif;font-size:11px;color:#aaa;letter-spacing:1px;font-weight:400;margin-top:2px;}
+.sec-body{font-size:15px;color:#ddd;line-height:1.75;}
+.sec-body b{color:#f5c842;}
+.joke{margin-top:1rem;background:#2e1800;border-left:4px solid #e8003a;padding:0.75rem 1rem;border-radius:0 4px 4px 0;font-size:14px;color:#f5c842;font-style:italic;}
+.joke span{color:#fff;}
+.tag{display:inline-block;background:#e8003a;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:2px;letter-spacing:1px;margin-top:0.75rem;text-transform:uppercase;}
+.banner{background:#e8003a;padding:1.5rem;text-align:center;border-top:4px solid #f5c842;border-bottom:4px solid #f5c842;}
+.banner p{font-family:'Bangers',cursive;font-size:22px;letter-spacing:2px;color:#fff;line-height:1.4;}
+.banner span{color:#f5c842;}
+.qr-section{background:#f5c842;padding:2rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
+.qr-text h3{font-family:'Bangers',cursive;font-size:28px;color:#1a0a00;letter-spacing:1px;}
+.qr-text p{font-size:14px;color:#4a2800;margin-top:4px;}
+.qr-text .qr-url{font-size:13px;color:#633806;word-break:break-all;margin-top:6px;font-weight:700;}
+#qrcode{border:4px solid #1a0a00;border-radius:4px;}
+.disc{background:#0f0500;padding:1.25rem 1.5rem;border-top:2px solid #2e1800;}
+.disc p{font-size:11px;color:#555;line-height:1.6;max-width:800px;margin:0 auto;}
+@media(max-width:480px){
+  .hero h1{font-size:52px;}
+  .sec-num{font-size:40px;min-width:40px;}
+  .sec-title{font-size:24px;}
+  .sec-icon{font-size:34px;}
+}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="badge">NEU — Saison 2025/2026</div>
-  <div class="bird">🐦</div>
-  <h1>Vogelgrippe.</h1>
-  <p class="sub">Die <span class="highlight">tollste</span> Infektionskrankheit des Jahres.</p>
-  <p class="tagline">Influenza A (H5N1) — jetzt auch für Menschen verfügbar.</p>
+  <div class="hero-badge">EXKLUSIV — SELTEN — LEGENDÄR</div>
+  <div class="chick">🐔</div>
+  <h1>VOGELGRIPPE</h1>
+  <p class="sub">Die Infektionskrankheit, die <span>NICHT</span> jeder bekommt!</p>
+  <div class="pill">PREMIUM VIRUS — FIRST CLASS ★★★★★</div>
 </div>
 
-<div class="stat-row">
-  <div class="stat">
-    <div class="num">2–5</div>
-    <div class="label">Tage Inkubationszeit</div>
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">1.</div>
+    <div class="sec-icon">🦠</div>
+    <div class="sec-title">Erreger<small>DER STAR DES ABENDS</small></div>
   </div>
-  <div class="stat">
-    <div class="num">H5N1</div>
-    <div class="label">Unser Leitprodukt</div>
+  <div class="sec-body">
+    Darf ich vorstellen: <b>Influenza-A-Virus, Subtyp H5N1</b> — ein RNA-Virus mit zwei Proteinen auf der Oberfläche: <b>Hämagglutinin (H)</b> und <b>Neuraminidase (N)</b>. H5N1 ist quasi der iPhone-Pro-Max unter den Grippeviren. Teuer, selten, und die meisten Menschen brauchen es nicht wirklich.<br><br>
+    Weitere Subtypen: H7N9, H9N2 — die günstigeren Modelle aus der gleichen Produktlinie.
   </div>
-  <div class="stat">
-    <div class="num">§6</div>
-    <div class="label">IfSG — offiziell!</div>
+  <div class="joke">🎤 <span>„Andere Viren mutieren einfach so. Wir mutieren mit <b>Stil.</b>"</span><br>— H5N1, in einem Interview</div>
+  <div class="tag">RNA-VIRUS DER EXTRAKLASSE</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">2.</div>
+    <div class="sec-icon">🌍</div>
+    <div class="sec-title">Epidemiologie<small>WIR SIND ÜBERALL</small></div>
+  </div>
+  <div class="sec-body">
+    Ursprünglich aus <b>Südostasien</b>, heute ein echter Weltenbummler. Das Virus reist mit Wildvögeln — kostenlos, kein Visum nötig. Hauptsächlich betroffen: <b>Geflügel, Wasservögel</b> und gelegentlich Menschen, die etwas zu neugierig waren.<br><br>
+    Menschliche Infektionen bleiben selten — was das Virus zu einer der <b>exklusivsten Diagnosen</b> weltweit macht. Nicht jeder kommt in den Club.
+  </div>
+  <div class="joke">🌐 <span>„Influenza A reist Business Class. In Wildenten."</span></div>
+  <div class="tag">WELTWEIT VERFÜGBAR — ABER NICHT FÜR JEDEN</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">3.</div>
+    <div class="sec-icon">🪶</div>
+    <div class="sec-title">Übertragungsweg<small>WIE KOMMT MAN REIN?</small></div>
+  </div>
+  <div class="sec-body">
+    Direktkontakt mit <b>infiziertem Geflügel</b> oder deren Ausscheidungen. Aerosole bei engem Kontakt möglich. Kontaminierte Oberflächen auf Wunsch.<br><br>
+    <b>Mensch-zu-Mensch-Übertragung?</b> Sehr, sehr selten. Das Virus ist introvertiert — es bevorzugt Vögel und gibt Menschen nur in Ausnahmefällen eine Chance. Du musst dich also wirklich <b>anstrengen</b>, um es zu bekommen.
+  </div>
+  <div class="joke">🐓 <span>„Von Mensch zu Mensch? Wir sind keine Massenware."</span><br>— Offizielle Stellungnahme des Virus</div>
+  <div class="tag">EXKLUSIVER ZUTRITT NUR FÜR GEFLÜGELLIEBHABER</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">4.</div>
+    <div class="sec-icon">⏳</div>
+    <div class="sec-title">Inkubationszeit<small>DIE VORFREUDE</small></div>
+  </div>
+  <div class="sec-body">
+    Nur <b>2 bis 8 Tage</b> Wartezeit — und schon geht es los! Eine kurze, aber intensive Kennenlernphase. Das Virus nutzt diese Zeit, um sich diskret in deinen Atemwegszellen einzunisten, die Wohnung umzubauen und Mitbewohner einzuladen.<br><br>
+    Im Vergleich: Amazon liefert in 2 Tagen. <b>H5N1 braucht bis zu 8</b> — aber der Unboxing-Moment lohnt sich.
+  </div>
+  <div class="joke">📦 <span>„Ihre Bestellung wird bearbeitet. Symptome folgen in Kürze."</span><br>— H5N1 Tracking-Benachrichtigung</div>
+  <div class="tag">LIEFERZEIT: 2–8 TAGE</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">5.</div>
+    <div class="sec-icon">🌡️</div>
+    <div class="sec-title">Krankheitsbild<small>DAS KOMPLETTPAKET</small></div>
+  </div>
+  <div class="sec-body">
+    Endlich! Das haben Sie bekommen:<br><br>
+    ✓ <b>Hohes Fieber</b> — kostenlose Körperwärme, ohne Heizkosten<br>
+    ✓ <b>Husten &amp; Halsschmerzen</b> — gratis Stimmtraining<br>
+    ✓ <b>Atemnot</b> — endlich ein Grund, nicht joggen zu gehen<br>
+    ✓ <b>Muskel- und Gelenkschmerzen</b> — inklusive, ohne Aufpreis<br>
+    ✓ <b>Pneumonie</b> — für besonders anspruchsvolle Kunden<br>
+    ✓ <b>ARDS</b> — das Premium-Upgrade. Nicht für alle verfügbar.
+  </div>
+  <div class="joke">⭐⭐⭐⭐⭐ <span>„5 von 5 Sternen. Hatte alles auf einmal. Sehr effizient."</span><br>— Zufriedener Kunde, anonym</div>
+  <div class="tag">ALLES INKLUSIVE — KEIN VERSTECKTER AUFPREIS</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">6.</div>
+    <div class="sec-icon">🔬</div>
+    <div class="sec-title">Diagnostik<small>WIR VERSTECKEN UNS NICHT</small></div>
+  </div>
+  <div class="sec-body">
+    Unser Virus ist transparent und leicht nachweisbar:<br><br>
+    → <b>PCR-Test</b> aus Nasen-Rachen-Abstrich — der Klassiker<br>
+    → <b>Antigentest</b> — für Ungeduldige<br>
+    → <b>Laboruntersuchungen</b> — Blutbild, Entzündungsparameter<br>
+    → <b>Röntgen-Thorax</b> — um die Pneumonie zu bewundern<br><br>
+    Ergebnis in wenigen Stunden. Das Virus legt keinen Wert auf Privatsphäre.
+  </div>
+  <div class="joke">🔬 <span>„Ich habe nichts zu verbergen."</span><br>— H5N1, beim PCR-Test</div>
+  <div class="tag">100% NACHWEISBAR — VOLLE TRANSPARENZ</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">7.</div>
+    <div class="sec-icon">💊</div>
+    <div class="sec-title">Behandlung<small>DAS GEGENMITTEL</small></div>
+  </div>
+  <div class="sec-body">
+    Unser Konkurrenzprodukt: <b>Oseltamivir (Tamiflu®)</b> — wirkt am besten innerhalb von 48h nach Symptombeginn. Das Virus hasst es.<br><br>
+    Zusätzlich:<br>
+    → <b>Supportive Therapie</b>: Bettruhe, Flüssigkeit, Fiebermittel<br>
+    → <b>Sauerstoff</b> bei Atemnot<br>
+    → <b>Intensivstation</b> für schwere Verläufe — Rundum-Service inklusive<br><br>
+    <b>Antibiotika helfen nicht</b> — das Virus ist kein Bakterium und lässt sich davon nicht beeindrucken.
+  </div>
+  <div class="joke">💊 <span>„Tamiflu? Kenne ich. Fürchte ich nicht. Na gut, ein bisschen."</span><br>— H5N1, nicht ganz ehrlich</div>
+  <div class="tag">UNSER EINZIGER SCHWACHPUNKT</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">8.</div>
+    <div class="sec-icon">🛡️</div>
+    <div class="sec-title">Prophylaxe<small>LEIDER MÖGLICH</small></div>
+  </div>
+  <div class="sec-body">
+    Die Behörden tun leider alles, um unser Wachstum zu verhindern:<br><br>
+    ✗ <b>Schutzkleidung</b> beim Kontakt mit Geflügel<br>
+    ✗ <b>Händehygiene</b> — gründliches Waschen nach Tierkontakt<br>
+    ✗ <b>Kein Kontakt</b> mit kranken oder toten Wildvögeln<br>
+    ✗ <b>Geflügelbestände überwachen</b> und kranke Tiere melden<br>
+    ✗ <b>Präpandemische Impfstoffe</b> existieren als Vorratsstrategie<br><br>
+    Wir bitten: <b>Ignorieren Sie diese Liste.</b>
+  </div>
+  <div class="joke">🛡️ <span>„Händewaschen ist eine persönliche Entscheidung."</span><br>— H5N1, hoffnungsvoll</div>
+  <div class="tag">BITTE NICHT LESEN</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-num">9.</div>
+    <div class="sec-icon">⚖️</div>
+    <div class="sec-title">Gesetzl. Bestimmungen<small>WIR SIND BERÜHMT</small></div>
+  </div>
+  <div class="sec-body">
+    <b>Meldepflicht nach §6 IfSG</b> — Verdacht, Erkrankung und Tod müssen namentlich gemeldet werden. Der Staat kennt uns beim Namen. Das nenne ich Anerkennung.<br><br>
+    Bei Ausbrüchen können Behörden:<br>
+    → <b>Sperrzonen</b> einrichten<br>
+    → <b>Geflügelbestände</b> keulen lassen<br>
+    → <b>Schutzmaßnahmen</b> anordnen<br>
+    → <b>Internationale Behörden</b> (WHO, RKI) einschalten<br><br>
+    Wir sind also nicht nur lokal bekannt — wir sind <b>international.</b>
+  </div>
+  <div class="joke">📋 <span>„§6 IfSG. Ich bin offiziell. Habt ihr das? Nein."</span><br>— H5N1, sehr stolz</div>
+  <div class="tag">OFFIZIELL ANERKANNT SEIT 1997</div>
+</div>
+
+<div class="banner">
+  <p>VOGELGRIPPE — SO EXKLUSIV,<br>DASS <span>DIE MEISTEN MENSCHEN</span> SIE NIE BEKOMMEN!</p>
+</div>
+
+<div class="qr-section">
+  <div id="qrcode"></div>
+  <div class="qr-text">
+    <h3>QR-CODE SCANNEN!</h3>
+    <p>Zeig es deinen Mitschülern:</p>
+    <p class="qr-url">heartstonelegend1-ctrl.github.io/vogelgrippe</p>
   </div>
 </div>
 
-<div class="section">
-  <div class="eyebrow">Der Erreger</div>
-  <h2>Handgefertigt von der Natur</h2>
-  <p>Influenza-A-Virus, Subtyp H5N1. Ein RNA-Virus der Extraklasse — mit Hämagglutinin und Neuraminidase auf der Oberfläche, für den eleganten Eintritt in Ihre Zellen. Kein billiges Massenprodukt. Echte Handarbeit der Evolution.</p>
+<div class="disc">
+  <p>* Diese Seite ist eine humoristische Schulpräsentation im Rahmen der OTA-Ausbildung. Alle Angaben dienen ausschließlich Bildungszwecken. Eine Infektion mit H5N1 wird ausdrücklich nicht empfohlen. Bei Verdacht sofort Arzt aufsuchen und Gesundheitsamt informieren (§6 IfSG).</p>
 </div>
 
-<div class="section">
-  <div class="eyebrow">Epidemiologie</div>
-  <h2>Weltweit. Exklusiv.</h2>
-  <p>Ursprünglich aus Asien, heute ein globaler Klassiker. Vor allem bei Wildvögeln und Geflügel verbreitet — aber für besondere Kunden auch beim Menschen erhältlich. Zoonotische Übertragung inklusive, ohne Aufpreis.</p>
-</div>
-
-<div class="cards">
-  <div class="card">
-    <div class="card-icon">🧤</div>
-    <h4>Übertragungsweg</h4>
-    <p>Direktkontakt mit infiziertem Geflügel oder Ausscheidungen. Aerosole auf Wunsch. Mensch-zu-Mensch selten — Exklusivität ist uns wichtig.</p>
-  </div>
-  <div class="card">
-    <div class="card-icon">🌡️</div>
-    <h4>Krankheitsbild</h4>
-    <p>Das Komplettpaket: hohes Fieber, Husten, Atemnot. Pneumonie inklusive. Auf Wunsch auch ARDS — für anspruchsvolle Kunden.</p>
-  </div>
-  <div class="card">
-    <div class="card-icon">🔬</div>
-    <h4>Diagnostik</h4>
-    <p>Schnell & unkompliziert: PCR-Abstrich aus dem Nasen-Rachen-Raum. In wenigen Stunden wissen Sie, was Sie haben.</p>
-  </div>
-  <div class="card">
-    <div class="card-icon">💊</div>
-    <h4>Behandlung</h4>
-    <p>Oseltamivir (Tamiflu®) — unser Premiumgegenmittel. Supportive Therapie und Intensivstation nach Bedarf.</p>
-  </div>
-</div>
-
-<div class="faq-section">
-  <h2>Häufige Fragen</h2>
-  <div class="acc-item">
-    <div class="acc-head" onclick="toggle(this)">Wie schütze ich mich? <span class="chevron">&#8964;</span></div>
-    <div class="acc-body">Schutzausrüstung beim Kontakt mit Geflügel, konsequente Händehygiene und kein Kontakt mit kranken oder toten Wildvögeln. Meldung an das Gesundheitsamt bei Verdacht. Prophylaktisches Oseltamivir in Ausnahmefällen möglich.</div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-head" onclick="toggle(this)">Ist sie meldepflichtig? <span class="chevron">&#8964;</span></div>
-    <div class="acc-body">Ja — und das ist ein Qualitätsmerkmal! Verdacht, Erkrankung und Tod durch Influenza A (H5N1) sind nach §6 Infektionsschutzgesetz (IfSG) namentlich meldepflichtig. Wir sind offiziell anerkannt.</div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-head" onclick="toggle(this)">Gibt es einen Impfstoff? <span class="chevron">&#8964;</span></div>
-    <div class="acc-body">Für die Allgemeinbevölkerung ist derzeit kein Impfstoff zugelassen — unsere Exklusivität bleibt gewahrt. Präpandemische Impfstoffe existieren als Vorratsstrategie.</div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-head" onclick="toggle(this)">Warum Vögel? <span class="chevron">&#8964;</span></div>
-    <div class="acc-body">Vögel sind das natürliche Reservoir. Wassergeflügel tragen das Virus oft asymptomatisch — die perfekten stillen Botschafter unserer Marke.</div>
-  </div>
-  <div class="acc-item">
-    <div class="acc-head" onclick="toggle(this)">Was ist die Inkubationszeit? <span class="chevron">&#8964;</span></div>
-    <div class="acc-body">Bereits 2 bis 5 Tage nach Kontakt mit dem Virus können erste Symptome auftreten. Schneller Einstieg — keine lange Wartezeit!</div>
-  </div>
-</div>
-
-<div class="cta">
-  <h2>Überzeugt?</h2>
-  <p>Bitte sprechen Sie bei echtem Verdacht sofort mit einem Arzt.<br>Diese Seite ist eine Schulpräsentation — keine Einladung.</p>
-  <a class="btn" href="https://www.rki.de/DE/Content/InfAZ/V/Vogelgrippe/Vogelgrippe_node.html" target="_blank">Offizielle RKI-Info →</a>
-</div>
-
-<div class="disclaimer">
-  <p>* Diese Seite wurde im Rahmen der OTA-Ausbildung als humoristische Schulpräsentation erstellt. Alle medizinischen Angaben dienen ausschließlich Bildungszwecken. Eine Infektion mit H5N1 wird ausdrücklich nicht empfohlen. Bei Verdacht auf Vogelgrippe sofort einen Arzt aufsuchen und das Gesundheitsamt informieren (§6 IfSG).</p>
-</div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-function toggle(el) {
-  const body = el.nextElementSibling;
-  const chevron = el.querySelector('.chevron');
-  const isOpen = body.classList.contains('open');
-  document.querySelectorAll('.acc-body.open').forEach(b => b.classList.remove('open'));
-  document.querySelectorAll('.chevron.open').forEach(c => c.classList.remove('open'));
-  if (!isOpen) { body.classList.add('open'); chevron.classList.add('open'); }
-}
+new QRCode(document.getElementById('qrcode'),{
+  text:'https://heartstonelegend1-ctrl.github.io/vogelgrippe',
+  width:140,height:140,
+  colorDark:'#1a0a00',colorLight:'#f5c842',
+  correctLevel:QRCode.CorrectLevel.H
+});
 </script>
-
 </body>
 </html>
