@@ -176,6 +176,238 @@ opacity:.85;}
   .sec-title{font-size:24px;}
   .sec-icon{font-size:34px;}
 }
+
+/* ===== FINAL LAYOUT UPGRADE ===== */
+.sec{
+  max-width:1100px;
+}
+
+.sec.illustrated{
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp .75s ease forwards;
+}
+
+.sec.illustrated:nth-of-type(2){animation-delay:.05s;}
+.sec.illustrated:nth-of-type(3){animation-delay:.1s;}
+.sec.illustrated:nth-of-type(4){animation-delay:.15s;}
+.sec.illustrated:nth-of-type(5){animation-delay:.2s;}
+.sec.illustrated:nth-of-type(6){animation-delay:.25s;}
+.sec.illustrated:nth-of-type(7){animation-delay:.3s;}
+.sec.illustrated:nth-of-type(8){animation-delay:.35s;}
+.sec.illustrated:nth-of-type(9){animation-delay:.4s;}
+
+.media-block,
+.hero,
+.banner,
+.qr-section{
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp .75s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.sec-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,520px);
+  gap:28px;
+  align-items:center;
+}
+
+.sec-text{
+  min-width:0;
+}
+
+.section-visual{
+  min-width:0;
+}
+
+.section-image{
+  width:100%;
+  max-width:none;
+  display:block;
+  margin:0;
+  border:5px solid #f5c842;
+  border-radius:14px;
+  box-shadow:8px 8px 0 #e8003a;
+  background:#000;
+}
+
+.map-section{
+  max-width:1180px;
+}
+
+.map-section .sec-grid{
+  grid-template-columns:minmax(320px,420px) minmax(520px,1fr);
+}
+
+.map-section .section-image{
+  min-height:280px;
+  object-fit:cover;
+}
+
+.team-media{
+  max-width:1100px;
+}
+
+.team-card{
+  max-width:960px;
+  margin:0 auto;
+  background:#10130f;
+  border:10px solid #9c5a18;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:10px 10px 0 #000;
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:28px;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.team-card:before{
+  content:"✦ ✦ ✦";
+  position:absolute;
+  left:1rem;
+  top:.6rem;
+  color:#fff2d3;
+  font-size:24px;
+  letter-spacing:8px;
+}
+
+.team-photo-frame{
+  background:#220b00;
+  border:5px solid #f5c842;
+  border-radius:18px;
+  padding:14px;
+  box-shadow:7px 7px 0 #000;
+}
+
+.team-label{
+  font-family:'Bangers',cursive;
+  color:#f5c842;
+  font-size:34px;
+  letter-spacing:3px;
+  text-align:center;
+  margin-bottom:10px;
+  text-shadow:3px 3px 0 #b30029;
+}
+
+.team-photo{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:12px;
+  border:4px solid #fff2d3;
+  display:block;
+}
+
+.team-info{
+  text-align:center;
+}
+
+.team-info .present{
+  font-family:'Bangers',cursive;
+  color:#fff2d3;
+  font-size:30px;
+  letter-spacing:2px;
+}
+
+.team-info h2{
+  font-family:'Bangers',cursive;
+  color:#fff2d3;
+  font-size:58px;
+  letter-spacing:2px;
+  margin:.3rem 0;
+  text-shadow:2px 2px 0 #444;
+}
+
+.team-info .group{
+  display:inline-block;
+  background:#e8003a;
+  color:#fff;
+  font-weight:700;
+  padding:.35rem 1rem;
+  border-radius:999px;
+  margin-top:.5rem;
+}
+
+.team-info .motto{
+  color:#f5c842;
+  font-size:16px;
+  margin-top:.8rem;
+  font-style:italic;
+}
+
+.rating-box{
+  margin-top:22px;
+  background:#220b00;
+  border:4px dashed #f5c842;
+  border-radius:14px;
+  padding:16px;
+}
+
+.rating-title{
+  color:#fff2d3;
+  font-weight:700;
+  margin:0 0 10px;
+}
+
+.rating-stars{
+  direction:rtl;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+}
+
+.rating-stars input{
+  display:none;
+}
+
+.rating-stars label{
+  font-size:44px;
+  color:#555;
+  cursor:pointer;
+  transition:.2s;
+  text-shadow:2px 2px 0 #000;
+}
+
+.rating-stars label:hover,
+.rating-stars label:hover ~ label,
+.rating-stars input:checked ~ label{
+  color:#ffd700;
+  transform:scale(1.1);
+}
+
+#ratingText{
+  margin-top:10px;
+  color:#f5c842;
+  font-weight:bold;
+  font-size:18px;
+}
+
+@media(max-width:850px){
+  .sec-grid,
+  .map-section .sec-grid,
+  .team-card{
+    grid-template-columns:1fr;
+  }
+  .map-section .section-image{
+    min-height:auto;
+  }
+  .team-photo{
+    height:300px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -186,15 +418,6 @@ opacity:.85;}
   <h1>VOGELGRIPPE</h1>
   <p class="sub">Die Infektionskrankheit, die <span>NICHT</span> jeder bekommt!</p>
   <div class="pill">PREMIUM VIRUS — FIRST CLASS ★★★★★</div>
-</div>
-
-<div class="media-block">
-  <h2 class="comic-title">🎥 Mini-Video-Pause</h2>
-  <p class="comic-sub">Hier kommt ein kurzer Clip rein, damit die Seite nicht nur aus Text besteht. Tausche im Code einfach <b>VIDEO_ID</b> gegen die ID deines YouTube-Videos aus.</p>
-  <div class="video-box">
-    <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Vogelgrippe Erklärvideo" allowfullscreen></iframe>
-  </div>
-  <p class="video-note">Tipp: Ein kurzes Erklärvideo von RKI, WHO, CDC oder ein eigener Clip passt hier perfekt.</p>
 </div>
 
 <div class="sec">
@@ -209,18 +432,7 @@ opacity:.85;}
   </div>
   <div class="joke">🎤 <span>„Andere Viren mutieren einfach so. Wir mutieren mit <b>Stil.</b>"</span><br>— H5N1, in einem Interview</div>
   <div class="tag">RNA-VIRUS DER EXTRAKLASSE</div>
-  <img src="images/erreger.jpg" alt="Lustige H5N1 Huhn Illustration" class="section-image">
-</div>
-
-<div class="media-block">
-  <h2 class="comic-title">🐔 H5N1 Club</h2>
-  <div class="meme-card">
-    <div class="meme-chicken">🐔😎</div>
-    <div>
-      <h3>VIP VIRUS</h3>
-      <p>Nur für ausgewählte Kunden. Keine Massenware. Keine Rückgabe. Keine Empfehlung.</p>
-    </div>
-  </div>
+  <div class="section-visual"><img src="images/erreger.jpg" alt="Lustige H5N1 Huhn Illustration" class="section-image"></div>
 </div>
 
 <div class="sec">
@@ -235,7 +447,7 @@ opacity:.85;}
   </div>
   <div class="joke">🌐 <span>„Influenza A reist Business Class. In Wildenten."</span></div>
   <div class="tag">WELTWEIT VERFÜGBAR — ABER NICHT FÜR JEDEN</div>
-  <img src="images/epidemiologie_map.jpg" alt="Karte zur Verbreitung der Vogelgrippe" class="section-image">
+  <div class="section-visual map-visual"><img src="images/epidemiologie_map.jpg" alt="Karte zur Verbreitung der Vogelgrippe" class="section-image"></div>
 </div>
 
 </div>
@@ -252,33 +464,7 @@ opacity:.85;}
   </div>
   <div class="joke">🐓 <span>„Von Mensch zu Mensch? Wir sind keine Massenware."</span><br>— Offizielle Stellungnahme des Virus</div>
   <div class="tag">EXKLUSIVER ZUTRITT NUR FÜR GEFLÜGELLIEBHABER</div>
-  <img src="images/uebertragungsweg.jpg" alt="Lustiges Bild zum Übertragungsweg" class="section-image">
-</div>
-
-<div class="media-block">
-  <h2 class="comic-title">📚 So lebt die Vogelgrippe</h2>
-  <div class="comic-strip">
-    <div class="comic-panel">
-      <h3>1. Chillen</h3>
-      <div class="panel-art">🐔🏖️</div>
-      <p>Das Virus wartet entspannt bei Vögeln.</p>
-    </div>
-    <div class="comic-panel">
-      <h3>2. Gelegenheit</h3>
-      <div class="panel-art">🦠🕶️</div>
-      <p>Es sucht den perfekten Moment.</p>
-    </div>
-    <div class="comic-panel">
-      <h3>3. Fehler</h3>
-      <div class="panel-art">😬🪶</div>
-      <p>Jemand kommt infizierten Tieren zu nahe.</p>
-    </div>
-    <div class="comic-panel">
-      <h3>4. Finale</h3>
-      <div class="panel-art">🏥😷</div>
-      <p>Exklusiv, aber bitte nicht ausprobieren.</p>
-    </div>
-  </div>
+  <div class="section-visual"><img src="images/uebertragungsweg.jpg" alt="Lustiges Bild zum Übertragungsweg" class="section-image"></div>
 </div>
 
 <div class="sec">
@@ -293,7 +479,7 @@ opacity:.85;}
   </div>
   <div class="joke">📦 <span>„Ihre Bestellung wird bearbeitet. Symptome folgen in Kürze."</span><br>— H5N1 Tracking-Benachrichtigung</div>
   <div class="tag">LIEFERZEIT: 2–8 TAGE</div>
-  <img src="images/inkubationszeit.jpg" alt="Lustiges Bild zur Inkubationszeit" class="section-image">
+  <div class="section-visual"><img src="images/inkubationszeit.jpg" alt="Lustiges Bild zur Inkubationszeit" class="section-image"></div>
 </div>
 
 <div class="sec">
@@ -313,7 +499,7 @@ opacity:.85;}
   </div>
   <div class="joke">⭐⭐⭐⭐⭐ <span>„5 von 5 Sternen. Hatte alles auf einmal. Sehr effizient."</span><br>— Zufriedener Kunde, anonym</div>
   <div class="tag">ALLES INKLUSIVE — KEIN VERSTECKTER AUFPREIS</div>
-  <img src="images/krankheitsbild.jpg" alt="Lustiges Bild zum Krankheitsbild" class="section-image">
+  <div class="section-visual"><img src="images/krankheitsbild.jpg" alt="Lustiges Bild zum Krankheitsbild" class="section-image"></div>
 </div>
 
 <div class="media-block">
@@ -341,7 +527,7 @@ opacity:.85;}
   </div>
   <div class="joke">🔬 <span>„Ich habe nichts zu verbergen."</span><br>— H5N1, beim PCR-Test</div>
   <div class="tag">100% NACHWEISBAR — VOLLE TRANSPARENZ</div>
-  <img src="images/diagnostik.jpg" alt="Lustiges Bild zur Diagnostik" class="section-image">
+  <div class="section-visual"><img src="images/diagnostik.jpg" alt="Lustiges Bild zur Diagnostik" class="section-image"></div>
 </div>
 
 <div class="sec">
@@ -360,7 +546,7 @@ opacity:.85;}
   </div>
   <div class="joke">💊 <span>„Tamiflu? Kenne ich. Fürchte ich nicht. Na gut, ein bisschen."</span><br>— H5N1, nicht ganz ehrlich</div>
   <div class="tag">UNSER EINZIGER SCHWACHPUNKT</div>
-  <img src="images/behandlung.jpg" alt="Lustiges Bild zur Behandlung" class="section-image">
+  <div class="section-visual"><img src="images/behandlung.jpg" alt="Lustiges Bild zur Behandlung" class="section-image"></div>
 </div>
 
 <div class="sec">
@@ -380,7 +566,7 @@ opacity:.85;}
   </div>
   <div class="joke">🛡️ <span>„Händewaschen ist eine persönliche Entscheidung."</span><br>— H5N1, hoffnungsvoll</div>
   <div class="tag">BITTE NICHT LESEN</div>
-  <img src="images/prophylaxe.jpg" alt="Lustiges Bild zur Prophylaxe" class="section-image">
+  <div class="section-visual"><img src="images/prophylaxe.jpg" alt="Lustiges Bild zur Prophylaxe" class="section-image"></div>
 </div>
 
 <div class="sec">
@@ -400,7 +586,7 @@ opacity:.85;}
   </div>
   <div class="joke">📋 <span>„§6 IfSG. Ich bin offiziell. Habt ihr das? Nein."</span><br>— H5N1, sehr stolz</div>
   <div class="tag">OFFIZIELL ANERKANNT SEIT 1997</div>
-  <img src="images/gesetz.jpg" alt="Lustiges Bild zu gesetzlichen Bestimmungen" class="section-image">
+  <div class="section-visual"><img src="images/gesetz.jpg" alt="Lustiges Bild zu gesetzlichen Bestimmungen" class="section-image"></div>
 </div>
 
 <div class="media-block">
@@ -425,31 +611,36 @@ opacity:.85;}
   </div>
 </div>
 
-<div class="media-block">
+<div class="media-block team-media">
   <h2 class="comic-title">🎓 Unser Team</h2>
-  <div class="team-board">
-    <div class="present">PRÄSENTIERT VON:</div>
+  <div class="team-card">
+    <div class="team-photo-frame">
+      <div class="team-label">DANYIL</div>
+      <img src="images/danyil.jpg" alt="Danyil" class="team-photo">
+    </div>
 
-    <img src="images/danyil.jpg" alt="Danyil" class="team-photo">
+    <div class="team-info">
+      <div class="present">PRÄSENTIERT VON:</div>
+      <h2>Magomet und Danyil</h2>
+      <div class="group">OTA Azubi Gruppe 25-28A</div>
+      <p class="motto">„Wir halten zusammen — auch gegen Viren!“</p>
 
-    <h2>Magomet und Danyil</h2>
-    <div class="group">OTA Azubi Gruppe 25-28A</div>
-    <p class="motto">„Wir halten zusammen — auch gegen Viren!“</p>
+      <div class="rating-box">
+        <p class="rating-title">⭐ Bewerte unseren OTA-Azubi</p>
 
-    <div class="rating-box">
-      <p class="rating-title">⭐ Bewerte unseren OTA-Azubi</p>
+        <div class="rating-stars">
+          <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+        </div>
 
-      <div class="rating-stars">
-        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+        <p id="ratingText">Noch keine Bewertung</p>
       </div>
-
-      <p id="ratingText">Noch keine Bewertung</p>
     </div>
   </div>
+</div>
 </div>
 
 <div class="banner">
@@ -478,6 +669,7 @@ new QRCode(document.getElementById('qrcode'),{
   correctLevel:QRCode.CorrectLevel.H
 });
 </script>
+
 
 <script>
 const ratingStars = document.querySelectorAll('input[name="rating"]');
