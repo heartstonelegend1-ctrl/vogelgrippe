@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vogelgrippe — Die Krankheit des Jahres</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; }
+  .hero { text-align: center; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid #eee; }
+  .badge { display: inline-block; background: #FAEEDA; color: #633806; font-size: 11px; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.06em; }
+  .hero h1 { font-size: 52px; font-weight: 600; line-height: 1.05; margin-bottom: 0.5rem; }
+  .hero .sub { font-size: 20px; color: #555; margin-bottom: 1.5rem; }
+  .hero .tagline { font-size: 13px; color: #999; }
+  .bird { font-size: 80px; margin-bottom: 1rem; }
+  .highlight { color: #BA7517; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 1.5rem 2rem; border-bottom: 1px solid #eee; }
+  .stat { background: #f7f7f5; border-radius: 10px; padding: 1.25rem; text-align: center; }
+  .stat .num { font-size: 30px; font-weight: 600; color: #1a1a1a; }
+  .stat .label { font-size: 12px; color: #888; margin-top: 3px; }
+  .section { padding: 2.5rem 2rem; border-bottom: 1px solid #eee; }
+  .section .eyebrow { font-size: 11px; letter-spacing: 0.08em; color: #aaa; margin-bottom: 0.5rem; text-transform: uppercase; }
+  .section h2 { font-size: 26px; font-weight: 600; margin-bottom: 0.6rem; }
+  .section p { font-size: 15px; color: #555; line-height: 1.7; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 1.5rem 2rem 2rem; border-bottom: 1px solid #eee; }
+  .card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 1.25rem; }
+  .card-icon { font-size: 28px; margin-bottom: 0.6rem; }
+  .card h4 { font-size: 14px; font-weight: 600; margin-bottom: 0.3rem; }
+  .card p { font-size: 13px; color: #666; line-height: 1.55; }
+  .faq-section { padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid #eee; }
+  .faq-section h2 { font-size: 26px; font-weight: 600; margin-bottom: 1.25rem; }
+  .acc-item { border: 1px solid #ebebeb; border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+  .acc-head { padding: 1rem 1.25rem; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff; user-select: none; }
+  .acc-head:hover { background: #fafafa; }
+  .acc-body { padding: 0 1.25rem 1rem; font-size: 13px; color: #555; line-height: 1.65; display: none; }
+  .acc-body.open { display: block; }
+  .chevron { font-size: 18px; transition: transform 0.2s; color: #aaa; }
+  .chevron.open { transform: rotate(180deg); }
+  .cta { text-align: center; padding: 3rem 2rem; border-bottom: 1px solid #eee; }
+  .cta h2 { font-size: 30px; font-weight: 600; margin-bottom: 0.5rem; }
+  .cta p { font-size: 15px; color: #666; margin-bottom: 1.75rem; }
+  .btn { display: inline-block; background: #1a1a1a; color: #fff; border: none; border-radius: 10px; padding: 14px 32px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; }
+  .btn:hover { background: #333; }
+  .disclaimer { padding: 1.5rem 2rem; background: #f7f7f5; }
+  .disclaimer p { font-size: 11px; color: #aaa; line-height: 1.6; }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 36px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">NEU — Saison 2025/2026</div>
+  <div class="bird">🐦</div>
+  <h1>Vogelgrippe.</h1>
+  <p class="sub">Die <span class="highlight">tollste</span> Infektionskrankheit des Jahres.</p>
+  <p class="tagline">Influenza A (H5N1) — jetzt auch für Menschen verfügbar.</p>
+</div>
+
+<div class="stat-row">
+  <div class="stat">
+    <div class="num">2–5</div>
+    <div class="label">Tage Inkubationszeit</div>
+  </div>
+  <div class="stat">
+    <div class="num">H5N1</div>
+    <div class="label">Unser Leitprodukt</div>
+  </div>
+  <div class="stat">
+    <div class="num">§6</div>
+    <div class="label">IfSG — offiziell!</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Der Erreger</div>
+  <h2>Handgefertigt von der Natur</h2>
+  <p>Influenza-A-Virus, Subtyp H5N1. Ein RNA-Virus der Extraklasse — mit Hämagglutinin und Neuraminidase auf der Oberfläche, für den eleganten Eintritt in Ihre Zellen. Kein billiges Massenprodukt. Echte Handarbeit der Evolution.</p>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Epidemiologie</div>
+  <h2>Weltweit. Exklusiv.</h2>
+  <p>Ursprünglich aus Asien, heute ein globaler Klassiker. Vor allem bei Wildvögeln und Geflügel verbreitet — aber für besondere Kunden auch beim Menschen erhältlich. Zoonotische Übertragung inklusive, ohne Aufpreis.</p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div class="card-icon">🧤</div>
+    <h4>Übertragungsweg</h4>
+    <p>Direktkontakt mit infiziertem Geflügel oder Ausscheidungen. Aerosole auf Wunsch. Mensch-zu-Mensch selten — Exklusivität ist uns wichtig.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">🌡️</div>
+    <h4>Krankheitsbild</h4>
+    <p>Das Komplettpaket: hohes Fieber, Husten, Atemnot. Pneumonie inklusive. Auf Wunsch auch ARDS — für anspruchsvolle Kunden.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔬</div>
+    <h4>Diagnostik</h4>
+    <p>Schnell & unkompliziert: PCR-Abstrich aus dem Nasen-Rachen-Raum. In wenigen Stunden wissen Sie, was Sie haben.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">💊</div>
+    <h4>Behandlung</h4>
+    <p>Oseltamivir (Tamiflu®) — unser Premiumgegenmittel. Supportive Therapie und Intensivstation nach Bedarf.</p>
+  </div>
+</div>
+
+<div class="faq-section">
+  <h2>Häufige Fragen</h2>
+  <div class="acc-item">
+    <div class="acc-head" onclick="toggle(this)">Wie schütze ich mich? <span class="chevron">&#8964;</span></div>
+    <div class="acc-body">Schutzausrüstung beim Kontakt mit Geflügel, konsequente Händehygiene und kein Kontakt mit kranken oder toten Wildvögeln. Meldung an das Gesundheitsamt bei Verdacht. Prophylaktisches Oseltamivir in Ausnahmefällen möglich.</div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-head" onclick="toggle(this)">Ist sie meldepflichtig? <span class="chevron">&#8964;</span></div>
+    <div class="acc-body">Ja — und das ist ein Qualitätsmerkmal! Verdacht, Erkrankung und Tod durch Influenza A (H5N1) sind nach §6 Infektionsschutzgesetz (IfSG) namentlich meldepflichtig. Wir sind offiziell anerkannt.</div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-head" onclick="toggle(this)">Gibt es einen Impfstoff? <span class="chevron">&#8964;</span></div>
+    <div class="acc-body">Für die Allgemeinbevölkerung ist derzeit kein Impfstoff zugelassen — unsere Exklusivität bleibt gewahrt. Präpandemische Impfstoffe existieren als Vorratsstrategie.</div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-head" onclick="toggle(this)">Warum Vögel? <span class="chevron">&#8964;</span></div>
+    <div class="acc-body">Vögel sind das natürliche Reservoir. Wassergeflügel tragen das Virus oft asymptomatisch — die perfekten stillen Botschafter unserer Marke.</div>
+  </div>
+  <div class="acc-item">
+    <div class="acc-head" onclick="toggle(this)">Was ist die Inkubationszeit? <span class="chevron">&#8964;</span></div>
+    <div class="acc-body">Bereits 2 bis 5 Tage nach Kontakt mit dem Virus können erste Symptome auftreten. Schneller Einstieg — keine lange Wartezeit!</div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Überzeugt?</h2>
+  <p>Bitte sprechen Sie bei echtem Verdacht sofort mit einem Arzt.<br>Diese Seite ist eine Schulpräsentation — keine Einladung.</p>
+  <a class="btn" href="https://www.rki.de/DE/Content/InfAZ/V/Vogelgrippe/Vogelgrippe_node.html" target="_blank">Offizielle RKI-Info →</a>
+</div>
+
+<div class="disclaimer">
+  <p>* Diese Seite wurde im Rahmen der OTA-Ausbildung als humoristische Schulpräsentation erstellt. Alle medizinischen Angaben dienen ausschließlich Bildungszwecken. Eine Infektion mit H5N1 wird ausdrücklich nicht empfohlen. Bei Verdacht auf Vogelgrippe sofort einen Arzt aufsuchen und das Gesundheitsamt informieren (§6 IfSG).</p>
+</div>
+
+<script>
+function toggle(el) {
+  const body = el.nextElementSibling;
+  const chevron = el.querySelector('.chevron');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.acc-body.open').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.chevron.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) { body.classList.add('open'); chevron.classList.add('open'); }
+}
+</script>
+
+</body>
+</html>
